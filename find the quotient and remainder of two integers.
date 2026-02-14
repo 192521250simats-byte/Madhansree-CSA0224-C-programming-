@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main()
+{
+   int a,b,q,r;
+   scanf("%d%d",a,b);
+   q=a/b;
+   r=a%b;
+   printf("division=%d/n",q);
+   printf("modulus=%d",r);
+   return 0;
+}
