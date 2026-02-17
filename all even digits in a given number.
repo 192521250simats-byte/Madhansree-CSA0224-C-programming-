@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int n, digit;
+    int sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    /* Make number positive if it is negative */
+    if (n < 0)
+        n = -n;
+
+    while (n != 0) {
+        digit = n % 10;
+        if (digit % 2 == 0) {
+            sum = sum + digit;
+        }
+        n = n / 10;
+    }
+
+    printf("Sum of even digits = %d\n", sum);
+
+    return 0;
+}
