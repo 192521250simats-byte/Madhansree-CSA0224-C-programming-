@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    int a = 0, b = 1, c;
+    int sum = 0;
+
+    printf("Enter the value of N: ");
+    scanf("%d", &n);
+
+    while (a <= n) {
+        if (a % 2 == 0) {
+            sum = sum + a;
+        }
+        c = a + b;
+        a = b;
+        b = c;
+    }
+
+    printf("Sum of even Fibonacci numbers till %d = %d\n", n, sum);
+
+    return 0;
+}
