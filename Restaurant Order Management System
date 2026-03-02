@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int choice, qty;
+    float total = 0;
+
+    printf("---- MENU ----\n");
+    printf("1. Pizza  - Rs.150\n");
+    printf("2. Burger - Rs.100\n");
+    printf("3. Pasta  - Rs.120\n");
+
+    printf("Enter your choice (1-3): ");
+    scanf("%d", &choice);
+
+    printf("Enter quantity: ");
+    scanf("%d", &qty);
+
+    switch(choice) {
+        case 1:
+            total = qty * 150;
+            break;
+        case 2:
+            total = qty * 100;
+            break;
+        case 3:
+            total = qty * 120;
+            break;
+        default:
+            printf("Invalid choice");
+            return 0;
+    }
+
+    printf("Total Bill = Rs. %.2f", total);
+
+    return 0;
+}
