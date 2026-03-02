@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+// Define structure
+struct account {
+    int accno;
+    char name[20];
+    float balance;
+};
+
+int main() {
+    struct account a;
+    float amount;
+
+    // Initialize account
+    a.accno = 101;
+    printf("Enter account holder name: ");
+    scanf("%s", a.name);
+    a.balance = 5000;
+
+    // Deposit
+    printf("Enter amount to deposit: ");
+    scanf("%f", &amount);
+    a.balance = a.balance + amount;
+
+    // Withdrawal
+    printf("Enter amount to withdraw: ");
+    scanf("%f", &amount);
+
+    if(amount <= a.balance) {
+        a.balance = a.balance - amount;
+    } else {
+        printf("Insufficient balance\n");
+    }
+
+    // Final output
+    printf("\nAccount Number : %d", a.accno);
+    printf("\nAccount Holder: %s", a.name);
+    printf("\nFinal Balance : %.2f", a.balance);
+
+    return 0;
+}
