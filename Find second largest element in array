@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int a[5] = {10, 50, 20, 40, 30};
+    int largest, second;
+
+    largest = second = a[0];
+
+    for(int i = 1; i < 5; i++) {
+        if(a[i] > largest) {
+            second = largest;
+            largest = a[i];
+        } else if(a[i] > second && a[i] != largest) {
+            second = a[i];
+        }
+    }
+
+    printf("Second largest = %d", second);
+    return 0;
+}
