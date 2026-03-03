@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+// Function to check palindrome using pointers
+int isPalindrome(char *str)
+{
+    char *start = str;
+    char *end = str + strlen(str) - 1;
+
+    while(start < end)
+    {
+        if(*start != *end)
+        {
+            return 0;   // Not palindrome
+        }
+        start++;
+        end--;
+    }
+
+    return 1;   // Palindrome
+}
+
+int main()
+{
+    char str[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    if(isPalindrome(str))
+        printf("String is Palindrome.\n");
+    else
+        printf("String is not Palindrome.\n");
+
+    return 0;
+}
