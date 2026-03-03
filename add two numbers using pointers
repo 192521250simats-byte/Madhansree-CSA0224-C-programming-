@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+// Function to add two numbers using pointers
+int add(int *a, int *b)
+{
+    return (*a + *b);
+}
+
+int main()
+{
+    int num1, num2, sum;
+
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    sum = add(&num1, &num2);
+
+    printf("Sum = %d\n", sum);
+
+    return 0;
+}
+
+swap two numbers using call by value
+
+#include <stdio.h>
+
+// Function using call by value
+void swap(int a, int b)
+{
+    int temp;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("Inside function after swapping:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+}
+
+int main()
+{
+    int num1, num2;
+
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    swap(num1, num2);
+
+    printf("Inside main after swapping:\n");
+    printf("num1 = %d\n", num1);
+    printf("num2 = %d\n", num2);
+
+    return 0;
+}
