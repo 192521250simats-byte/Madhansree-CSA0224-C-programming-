@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+// Function to calculate area
+float area(float length, float breadth)
+{
+    return length * breadth;
+}
+
+// Function to calculate perimeter
+float perimeter(float length, float breadth)
+{
+    return 2 * (length + breadth);
+}
+
+int main()
+{
+    float length, breadth;
+
+    printf("Enter length of rectangle: ");
+    scanf("%f", &length);
+
+    printf("Enter breadth of rectangle: ");
+    scanf("%f", &breadth);
+
+    printf("Area of rectangle = %.2f\n", area(length, breadth));
+    printf("Perimeter of rectangle = %.2f\n", perimeter(length, breadth));
+
+    return 0;
+}
