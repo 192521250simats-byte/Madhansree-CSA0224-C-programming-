@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+// Function to count words using pointer
+int countWords(char *str)
+{
+    int count = 0;
+
+    while(*str != '\0')
+    {
+        // Check for start of a word
+        if((*str != ' ' && *str != '\n' && *str != '\t') &&
+           (*(str - 1) == ' ' || *(str - 1) == '\n' || *(str - 1) == '\t'))
+        {
+            count++;
+        }
+
+        str++;
+    }
+
+    return count;
+}
+
+int main()
+{
+    char str[200];
+    int result;
+
+    printf("Enter a sentence: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Special case: if first character is not space, count first word
+    if(str[0] != ' ' && str[0] != '\n' && str[0] != '\t')
+    {
+        result = countWords(str) + 1;
+    }
+    else
+    {
+        result = countWords(str);
+    }
+
+    printf("Number of words = %d\n", result);
+
+    return 0;
+}
